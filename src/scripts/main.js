@@ -5,7 +5,7 @@ fetch('http://127.0.0.1:8000/assets/data/entidades.geojson')
         return res.json();
     })
     .then(data => {
-        // console.log(data);
+        console.log('SSH Key Works')
         map.on('load', function() {
 
             var feats = [];
