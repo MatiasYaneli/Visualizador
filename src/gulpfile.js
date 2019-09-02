@@ -9,9 +9,9 @@ const rename = require('gulp-rename'),
     autoprefixer = require('autoprefixer'),
     cssnano = require('cssnano'),
     tailwindcss = require('tailwindcss');
-    // stylus = require('gulp-stylus'),
-    // rupture = require('rupture'),
-    // nib = require('nib');
+// stylus = require('gulp-stylus'),
+// rupture = require('rupture'),
+// nib = require('nib');
 
 // function styles() {
 //     return src('stylus/init.styl')
@@ -41,16 +41,7 @@ function styles() {
             suffix: '.min',
             extname: ".css"
         }))
-        .pipe(dest('../assets/css/'));    
-
-    // return src('scss/init.scss')
-    //     .pipe(sass().on('error', sass.logError))
-    //     .pipe(rename({
-    //         basename: 'main',
-    //         suffix: '.min',
-    //         extname: ".css"
-    //     }))
-    //     .pipe(dest('../assets/css/'));
+        .pipe(dest('../assets/css/'));
 }
 
 function scripts() {

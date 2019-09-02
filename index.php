@@ -22,11 +22,11 @@
                 foreach($texts["menus"] as $menu) {
             ?>
                 <div class="tw-w-full">
-                    <div class="tw-w-full tw-h-12 tw-flex tw-items-center tw-justify-between tw-bg-gray-500 tw-rounded tw-border tw-px-4 tw-text-white tw-font-medium hover:tw-cursor-pointer hover:tw-bg-gray-600"
-                        id="menu-head-<?php echo $menu["id"]; ?>">
+                    <div class="menu-header tw-w-full tw-h-12 tw-flex tw-items-center tw-justify-between tw-bg-gray-500 tw-rounded tw-border tw-px-4 tw-text-white tw-font-medium hover:tw-cursor-pointer hover:tw-bg-gray-600"
+                        id="menu-head-<?php echo $menu["id"]; ?>" data-headId="<?php echo $menu["id"]; ?>">
                         <?php echo $menu["name"]; ?><i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="tw-flex tw-flex-wrap tw-items-center tw-justify-center tw-px-4 tw-py-2">
+                    <div id="menu-content-<?php echo $menu["name"]; ?>" class="tw-flex tw-flex-wrap tw-items-center tw-justify-center tw-px-4 tw-overflow-hidden tw-h-0">
                     <?php
                         $index = 0;
                         $menu_len = count($menu["fechas"]);
