@@ -1,5 +1,5 @@
 module.exports = {
-  prefix: 'tw-',
+  // prefix: 'tw-',
   theme: {
     screens: {
       sm: '640px',
