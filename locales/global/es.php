@@ -7,7 +7,7 @@ $texts = [
             "fechas" => [1999,2005,2011,2017]
         ),
         array(
-            "id" => "DistritoLocal",
+            "id" => "distritoLocal",
             "name" => "Diputado Local por Distrito Local",
             "fechas" => [1996,2000,2003,2006,2009,2012,2015,2018]
         ),
