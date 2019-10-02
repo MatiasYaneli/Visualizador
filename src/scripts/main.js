@@ -37,12 +37,11 @@ const loadData = (target, add) => {
                         'paint': {
                             'fill-color': {
                                 type: 'categorical',
-                                property: 'G18',
+                                property: 'G_1999',
                                 stops: [
-                                    ['PT-MORENA-PES', '#F00'],
+                                    ['PRD-PT', '#F00'],
                                     ['PRI', '#0f0'],
-                                    ['PAN-PRD-MC', '#00f'],
-                                    ['MORENA', '#000']
+                                    ['PAN-PVEM', '#00f'],
                                 ]
                             },
                             'fill-outline-color': '#fff',
@@ -52,7 +51,7 @@ const loadData = (target, add) => {
 
                     map.on('click', target + '-layer', function(e) {
                         var description = '<h4>' + e.features[0].properties.CABECERA + '</h4>' +
-                            '<p><strong>Gobernado por:</strong>' + e.features[0].properties.G18 + '</p>';
+                            '<p><strong>Gobernado por:</strong>' + e.features[0].properties.G_1999 + '</p>';
                         new mapboxgl.Popup()
                             .setLngLat(e.lngLat)
                             .setHTML(description)

@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <nav class="w-full bg-gray-600 h-12 text-white flex items-center px-4"><h1 class="font-medium text-xl">CEPLAN</h1></nav>
+    <nav class="w-full bg-gray-600 h-12 text-white flex items-center px-4"><h1 class="font-medium text-xl">CEPLAN  Centro de Planeación Estratégica y Prospectiva Política </h1></nav>
 
     <div class="main-container flex w-full h-screen">
         <div class="w-3/4" id='map'></div>
