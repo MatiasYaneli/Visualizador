@@ -1,6 +1,7 @@
 const loadData = (target, add) => {
+    const capaUrl = '/assets/data/fill/' + target + '.geojson';
     if(add) {
-        fetch('/assets/data/' + target + '.geojson')
+        fetch(capaUrl)
         .then(response => response.json())
         .then(data => {
                 // var feats = [];
@@ -27,9 +28,11 @@ const loadData = (target, add) => {
                 const dataLayer = map.getLayer(target + '-layer');
                 if(!dataLayer) {
 
+                    let tipo = capaUrl.substr(13, 4);
+
                     map.addLayer({
                         'id': target + '-layer',
-                        'type': 'fill',
+                        'type': tipo,
                         'source': target + '-data',
                         // 'layout': {
                         //     'icon-image': 'school'
@@ -50,8 +53,10 @@ const loadData = (target, add) => {
                     });
 
                     map.on('click', target + '-layer', function(e) {
-                        var description = '<h4>' + e.features[0].properties.CABECERA + '</h4>' +
-                            '<p><strong>Gobernado por:</strong>' + e.features[0].properties.G_1999 + '</p>';
+                        var description = '<h4 class="text-xl">' + e.features[0].properties.CABECERA_1 + '</h4>' +
+                        '<p><strong>Gobernado por: </strong>' + e.features[0].properties.G_1999 + '</p>' +
+                        '<p><strong>Coalición: </strong>' + e.features[0].properties.Coalicion + '</p>' +
+                        '<p><strong>Candidato: </strong>' + e.features[0].properties.Candidato + '</p>';
                         new mapboxgl.Popup()
                             .setLngLat(e.lngLat)
                             .setHTML(description)
