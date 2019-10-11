@@ -1,5 +1,7 @@
 const loadData = (target, add) => {
     const capaUrl = '/assets/data/fill/' + target + '.geojson';
+    console.log(capaUrl);
+    // const capaUrl = '/assets/data/G_1999.geojson';
     if(add) {
         fetch(capaUrl)
         .then(response => response.json())
@@ -38,21 +40,26 @@ const loadData = (target, add) => {
                         //     'icon-image': 'school'
                         // },
                         'paint': {
-                            'fill-color': {
-                                type: 'categorical',
-                                property: 'G_1999',
-                                stops: [
-                                    ['PRD-PT', '#F00'],
-                                    ['PRI', '#0f0'],
-                                    ['PAN-PVEM', '#00f'],
-                                ]
+                            // 'fill-color': {
+                            //     type: 'categorical',
+                            //     property: 'G_1999',
+                            //     stops: [
+                            //         ['PRD-PT', '#F00'],
+                            //         ['PRI', '#0f0'],
+                            //         ['PAN-PVEM', '#00f'],
+                            //     ]
+                            // },
+                            "fill-color": {
+                                property: 'bgColor',
+                                type: 'identity'
                             },
                             'fill-outline-color': '#fff',
-                            'fill-opacity': 0.6
+                            'fill-opacity': 0.8
                         },
                     });
 
                     map.on('click', target + '-layer', function(e) {
+                        console.log(e.features[0]);
                         var description = '<h4 class="text-xl">' + e.features[0].properties.CABECERA_1 + '</h4>' +
                         '<p><strong>Gobernado por: </strong>' + e.features[0].properties.G_1999 + '</p>' +
                         '<p><strong>Coalición: </strong>' + e.features[0].properties.Coalicion + '</p>' +
