@@ -16,18 +16,18 @@
 <body>
     <nav class="w-full bg-gray-600 h-12 text-white flex items-center px-4"><h1 class="font-medium text-xl">CEPLAN  Centro de Planeación Estratégica y Prospectiva Política </h1></nav>
 
-    <div class="main-container flex w-full h-screen">
-        <div class="w-3/4" id='map'></div>
-        <div class="w-full lg:w-1/4 p-4 h-full bg-red">
+    <div class="main-container relative w-full h-screen">
+        <div class="w-full h-screen z-0" id='map'></div>
+        <div class="fixed top-0 left-0 mx-8 mt-20 w-1/5 z-50 shadow-lg">
             <?php
                 foreach($texts["menus"] as $menu) {
             ?>
-                <div class="w-full">
-                    <div class="menu-header w-full h-12 flex items-center justify-between bg-gray-500 rounded border px-4 text-white font-medium hover:cursor-pointer hover:bg-gray-600"
+                <div class="w-full bg-white">
+                    <div class="menu-header w-full h-8 flex items-center justify-between bg-gray-500 rounded border px-2 text-white font-light hover:cursor-pointer hover:bg-gray-600"
                         id="menu-head-<?php echo $menu["id"]; ?>" data-menu="<?php echo $menu["id"]; ?>">
                         <?php echo $menu["name"]; ?><i class="fas fa-chevron-down"></i>
                     </div>
-                    <div id="menu-content-<?php echo $menu["id"]; ?>" class="menu-content flex flex-wrap items-center justify-center px-4 overflow-hidden">
+                    <div id="menu-content-<?php echo $menu["id"]; ?>" class="menu-content flex flex-wrap items-center justify-center px-2 overflow-hidden">
                     <?php
                         $index = 0;
                         $menu_len = count($menu["fechas"]);
