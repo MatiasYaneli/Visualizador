@@ -53,6 +53,8 @@
     <script src="./assets/js/jquery-3.3.1.slim.min.js"></script>
     <script src="./assets/js/mapbox-gl.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
+    <script src='./pwa-init.js'></script>
+    <script src='./manifest.json'></script>
     <script src='./assets/js/main.min.js'></script>
 </body>
 
